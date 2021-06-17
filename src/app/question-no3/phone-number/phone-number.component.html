@@ -1,0 +1,51 @@
+
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+  <div class="col-md-6">
+    <p>All Entered Phone Number </p>
+    
+    <ng-container *ngFor="let element of newData;let i = index;">
+      <div *ngIf="element.isshow">
+        PhoneNumber {{i + 1}}: {{element.phonenumber}}
+      </div>
+
+    </ng-container>
+  
+    
+  </div>
+  <div class="col-md-6">
+<form #addressForm="ngForm" class="container mt-3" (ngSubmit)="logValue()">
+  <div class="row justify-content-center">
+    <div class="col-12">
+        <button type="button" class="btn btn-primary mb-2" (click)="addPhoneNumber()">Add PhoneNumber</button>
+
+        <section class="container border mb-4 p-3" *ngFor="let phonenumber of phonenumbers; let i = index;">
+          <h4>PhoneNumber {{i + 1}}</h4>
+
+  
+        <div class="row">
+          <div class="col-12">
+              <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="text" class="form-control" [(ngModel)]="phonenumber.phonenumber" name="phonenumber_{{phonenumber.id}}" placeholder="Phone Number"/>
+                </div>
+                </div>
+                <div class="col-6 text-right">
+                  <button type="button" class="btn btn-danger btn-sm" (click)="removePhoneNumber(i)" style="margin-top: 20px;">Remove</button>
+              
+                </div>
+          </div>
+      </section>
+      <div class="text-right">
+          <input type="submit"  class="btn btn-success" value="Submit"/>
+      </div>
+      
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
+

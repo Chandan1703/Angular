@@ -1,0 +1,17 @@
+
+<div class="container" style="margin-top: 200px;">
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Please Enter  Index</label>
+      <input type="number"  [(ngModel)]="inputvalue" class="form-control" id="exampleInputEmail1" 
+       placeholder="">
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px;"
+    (click)="OnSave()">Submit</button>
+
+    <h2>Value : </h2> <p *ngIf='msg!=""'>{{msg}}</p>
+
+
+
+      
+</div>
